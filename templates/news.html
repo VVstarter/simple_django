@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новости</title>
+</head>
+<body>
+{% for news in news %}
+    <h1>{{ news.title }}</h1>
+    {% for img in news.image_links.all %}
+        <img src="{{ img.name }}" title="{{ img.title }}">
+    {% endfor %}
+    <p>{{ news.content }}</p>
+    <p>{{ news.date }}</p>
+{% endfor %}
+</body>
+</html>
